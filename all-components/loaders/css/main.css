@@ -1,0 +1,49 @@
+/* Start Our Framwork */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width:1200px;
+    margin:auto
+}
+
+/* End Our Framwork */
+
+/* start loader one */
+.loader1 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+.loader1 .loader-container {
+    width: 40px;
+    animation: rotate 4s linear infinite;
+    display: inline-block;
+}
+.loader1 .circle{
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
+    animation: grow 2s linear infinite;
+    transform: scale(0);
+    margin: -10px;
+}
+.loader1 .circle:nth-child(2) {
+    background-color: black;
+    animation-delay: 1s;
+}
+
+@keyframes rotate{
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes grow{
+    50%{
+        transform: scale(1);
+    }
+}
+/* End loader one */
