@@ -1,0 +1,107 @@
+/* Start Our Framwork */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width:1200px;
+    margin:auto
+}
+
+/* End Our Framwork */
+
+/* start loader one */
+.loader1 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: #ccc;
+}
+.loader1 .loader-container {
+    width: 40px;
+    animation: rotate 4s linear infinite;
+    display: inline-block;
+}
+.loader1 .circle{
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
+    animation: grow 2s linear infinite;
+    transform: scale(0);
+    margin: -10px;
+}
+.loader1 .circle:nth-child(2) {
+    background-color: black;
+    animation-delay: 1s;
+}
+
+@keyframes rotate{
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes grow{
+    50%{
+        transform: scale(1);
+    }
+}
+/* End loader one */
+
+
+/* start loader two */
+.loader2 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-size: 35px;
+}
+.loader2 .loader-container::after {
+    content: '\2026';
+    width: 3px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: showDots 3s steps(4, end) infinite;
+}
+@keyframes showDots {
+    to {
+        width: 45px;
+    }
+}
+/* start loader two */
+
+/* start loader three */
+.loader3 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: #ccc;
+}
+.loader3 .circle {
+    width: 0px;
+    height: 0px;
+    margin: 7px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 0.75s ease-in infinite alternate;
+}
+.loader3 .circle:nth-child(2) {
+    background-color: black;
+    animation-delay: 0.25s;
+}
+.loader3 .circle:nth-child(3) {
+    animation-delay: 0.5s;
+}
+@keyframes bounce {
+    to {
+        transform: translate3d(0,-16px,0);
+        width: 10px;
+        height: 10px;
+    }
+}
+/* End loader three */
